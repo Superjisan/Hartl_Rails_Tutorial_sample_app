@@ -78,6 +78,9 @@ describe "User pages" do
       end
 
       describe "with valid information" do
+
+        # click_link "Account"
+
         let(:new_name)  { "New Name" }
         let(:new_email) { "new@example.com" }
         before do
@@ -87,6 +90,8 @@ describe "User pages" do
           fill_in "Confirm Password", with: user.password
           click_button "Save changes"
         end
+
+
 
         it { should have_title(new_name) }
         it { should have_selector('div.alert.alert-success') }
