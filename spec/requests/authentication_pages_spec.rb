@@ -71,10 +71,9 @@ describe "Authentication" do
 
         describe "visiting the user index" do
           before { visit users_path }
-          it { should have_title('All users') }
+          it { should have_title('Sign in') }
         end
       end
-    end
 
     describe "as wrong user" do
       let(:user) { FactoryGirl.create(:user) }
@@ -104,7 +103,8 @@ describe "Authentication" do
         specify { expect(response).to redirect_to(root_url) }
       end
     end
-   end #end of authorization
 
+    end
+   end #end of authorization
 end
 
